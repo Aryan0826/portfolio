@@ -14,9 +14,9 @@ type SiteHeaderProps = {
 export function SiteHeader({ mode, time, onModeChange, onHome }: SiteHeaderProps) {
   return (
     <header className="topbar">
-      <button className="brand" onClick={onHome} aria-label="Aangan OS home">
+      <button className="brand" onClick={onHome} aria-label="AV-DOS home">
         <span className="brand-mark" aria-hidden="true">AV</span>
-        <span><strong>Aangan</strong><em>OS / PERSONAL SYSTEM</em></span>
+        <span><strong>AV-DOS</strong><em>PERSONAL SYSTEM</em></span>
       </button>
 
       <nav aria-label="Primary navigation">
@@ -68,11 +68,10 @@ export function SiteFooter({ onOpenTerminal }: { onOpenTerminal: () => void }) {
     <footer>
       <div className="footer-brand">
         <span className="brand-mark" aria-hidden="true">AV</span>
-        <p><strong>Aangan OS</strong><small>Designed as a personal digital courtyard.</small></p>
+        <p><strong>AV-DOS</strong><small>Projects, experiments, and progress in one personal system.</small></p>
       </div>
       <p>&copy; {new Date().getFullYear()} {profile.name}</p>
       <button onClick={onOpenTerminal}>OPEN TERMINAL <kbd>CTRL K</kbd></button>
     </footer>
   );
 }
-

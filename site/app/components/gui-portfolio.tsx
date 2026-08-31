@@ -37,12 +37,12 @@ export function GuiPortfolio({ onOpenTerminal }: GuiPortfolioProps) {
           <dl className="hero-meta">
             <div><dt>STUDYING</dt><dd>CS Honours + Mathematics</dd></div>
             <div><dt>BUILDING SINCE</dt><dd>2023</dd></div>
-            <div><dt>CURRENT FOCUS</dt><dd>Robotics + HCI Research</dd></div>
+            <div><dt>CURRENT FOCUS</dt><dd>Software + Systems + Robotics</dd></div>
           </dl>
         </div>
 
-        <div className="workbench" aria-label="Aangan OS navigation">
-          <div className="window-titlebar"><span>AANGAN://HOME</span><span className="window-status">● ONLINE</span></div>
+        <div className="workbench" aria-label="AV-DOS navigation">
+          <div className="window-titlebar"><span>AV-DOS://HOME</span><span className="window-status">● ONLINE</span></div>
           <div className="woven-rule" />
           <div className="desktop-view">
             <p className="desktop-label">CHOOSE A DOOR</p>
@@ -76,7 +76,7 @@ export function GuiPortfolio({ onOpenTerminal }: GuiPortfolioProps) {
         <article className="featured-project">
           <div className="project-visual" aria-label="CyberSentinel extension and API architecture motif">
             <div className="project-browser">
-              <div className="project-browser-bar"><span>AANGAN://WORK/{getProjectNumber(featuredProject)}</span><b>{featuredProject.status}</b></div>
+              <div className="project-browser-bar"><span>AV-DOS://WORK/{getProjectNumber(featuredProject)}</span><b>{featuredProject.status}</b></div>
               <div className="project-browser-content">
                 <div className="mini-sidebar"><i/><i/><i/><i/></div>
                 <div className="mini-canvas pattern-lattice"><span>EXT</span><em>&lt;-&gt;</em><span>API</span></div>
@@ -123,7 +123,7 @@ export function GuiPortfolio({ onOpenTerminal }: GuiPortfolioProps) {
         <SectionLabel number="03">JOURNEY / CHANGELOG</SectionLabel>
         <div className="section-heading split-heading">
           <h2 tabIndex={-1}>Growth is part<br/><i>of the work.</i></h2>
-          <p>From programming fundamentals to studying how humans control robots: every year added another layer to how I understand computing.</p>
+          <p>From programming fundamentals to systems, networks, and real robot hardware: every year added another layer to how I understand computing.</p>
         </div>
 
         <ol className="timeline">
@@ -151,9 +151,9 @@ export function GuiPortfolio({ onOpenTerminal }: GuiPortfolioProps) {
         <div className="manual-grid">
           <div className="manual-intro">
             <p className="big-quote">“I learn by building.”</p>
-            <p>Curiosity is not a line in my skills section. It is the method connecting an Android app, a filesystem, a game jam, a robot arm, and a research study.</p>
+            <p>Curiosity is not a line in my skills section. It is the method connecting an Android app, a filesystem, a game jam, and a robot arm.</p>
             <dl className="currently">
-              <div><dt>CURRENTLY</dt><dd>Researching reusable motion macros for robot teleoperation</dd></div>
+              <div><dt>CURRENTLY</dt><dd>Deepening my systems and robotics foundations through hands-on projects</dd></div>
               <div><dt>OPTIMIZING FOR</dt><dd>Clarity, testability, honest learning, and systems that respect their users</dd></div>
               <div><dt>TEACHING ME</dt><dd>Explaining mental mathematics to young learners makes precision and empathy inseparable</dd></div>
             </dl>
@@ -179,7 +179,7 @@ export function GuiPortfolio({ onOpenTerminal }: GuiPortfolioProps) {
             <a href={profile.resumeUrl} target="_blank">Open resume PDF <span aria-hidden="true">-&gt;</span></a>
           </article>
           <div className="experience-panel">
-            <p className="panel-label">CURRENT ROLES</p>
+            <p className="panel-label">ROLES &amp; EXPERIENCE</p>
             {experience.map((item) => (
               <article key={item.role}>
                 <span>{item.period}</span>
@@ -230,12 +230,13 @@ export function GuiPortfolio({ onOpenTerminal }: GuiPortfolioProps) {
         <div className="contact-stamp" aria-hidden="true">AV<br/><small>YWG</small></div>
         <SectionLabel number="05">CONTACT / OPEN CHANNEL</SectionLabel>
         <h2 tabIndex={-1}>Have a problem<br/><i>worth understanding?</i></h2>
-        <p>Let us build something thoughtful, compare notes on a difficult system, or talk about robots and the people controlling them.</p>
+        <p>Let us build something thoughtful, compare notes on a difficult system, or talk about software that reaches beyond the screen.</p>
         <a className="contact-link" href={`mailto:${profile.email}`}>
           <span>{profile.email}</span><b aria-hidden="true">-&gt;</b>
         </a>
         <div className="contact-actions">
           <a href={profile.github} target="_blank" rel="noreferrer">GitHub / Aryan0826</a>
+          <a href={profile.linkedin} target="_blank" rel="noreferrer">LinkedIn / Aryan Vekariya</a>
           <a href={profile.resumeUrl} target="_blank">Resume / PDF</a>
           <button className="contact-command" onClick={() => onOpenTerminal('contact')}><span>Prefer commands?</span><b>run: contact</b></button>
         </div>

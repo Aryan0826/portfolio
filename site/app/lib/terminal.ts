@@ -34,7 +34,6 @@ const staticCommands = [
   'journey',
   'about',
   'skills',
-  'research',
   'education',
   'experience',
   'community',
@@ -104,7 +103,7 @@ export function executePortfolioCommand(raw: string): TerminalResponse {
   if (clean === 'help') {
     return {
       lines: [
-        'EXPLORE   whoami | work | journey | about | skills | research',
+        'EXPLORE   whoami | work | journey | about | skills',
         'PROFILE   education | experience | community | awards | contact | resume',
         'DETAIL    cat <project-slug>',
         'NAVIGATE  open <work|journey|about|contact> | gui',
@@ -126,11 +125,11 @@ export function executePortfolioCommand(raw: string): TerminalResponse {
   if (clean === 'ls') {
     return {
       lines: [
-        'work/  journey/  research/  community/  manual.md  skills.txt  resume.pdf  contact.sh',
+        'work/  journey/  community/  manual.md  skills.txt  resume.pdf  contact.sh',
       ],
     };
   }
-  if (clean === 'pwd') return { lines: ['/home/aryan/aangan'] };
+  if (clean === 'pwd') return { lines: ['/home/aryan/av-dos'] };
   if (clean === 'work' || clean === 'projects') {
     return {
       lines: projects.map(
@@ -170,12 +169,6 @@ export function executePortfolioCommand(raw: string): TerminalResponse {
       ]),
     };
   }
-  if (clean === 'research') {
-    const matches = projects.filter(
-      (project) => project.category === 'AI & Research' || project.category === 'Robotics',
-    );
-    return { lines: matches.map((project) => `${project.title} - ${project.summary}`) };
-  }
   if (clean === 'education') {
     return {
       lines: [
@@ -199,12 +192,13 @@ export function executePortfolioCommand(raw: string): TerminalResponse {
       links: [
         { label: profile.email, href: `mailto:${profile.email}` },
         { label: 'github.com/Aryan0826', href: profile.github },
+        { label: 'linkedin.com/in/aryan-vekariya', href: profile.linkedin },
       ],
     };
   }
   if (clean === 'resume') {
     return {
-      lines: ['Resume mounted at /public/AryanVekariya-Resume.pdf'],
+      lines: ['Resume available as a PDF.'],
       links: [{ label: 'Open resume PDF', href: profile.resumeUrl }],
     };
   }

@@ -41,12 +41,13 @@ export type Project = {
 export const profile = {
     name: "Aryan Vekariya",
     shortName: "Aryan",
-    handle: "aryan@aangan",
+    handle: "aryan@av-dos",
     location: "Winnipeg, Canada",
     email: "vekariyaaryan100@gmail.com",
     github: "https://github.com/Aryan0826",
+    linkedin: "https://www.linkedin.com/in/aryan-vekariya-b66663262/",
     resumeUrl: `${publicBasePath}/AryanVekariya-Resume.pdf`,
-    headline: "Computer Science student, builder, and emerging HCI researcher.",
+    headline: "Computer Science student building across software, systems, and robotics.",
     intro: "I learn by building: entering unfamiliar territory, finding the fundamentals, and carrying each hard-won lesson into the next system.",
     education: {
         institution: "University of Manitoba",
@@ -92,10 +93,10 @@ export const projects: Project[] = [
         slug: "teleoperation-macros-research",
         title: "Reusable Motion Macros for Robot Teleoperation",
         shortTitle: "Teleoperation Research",
-        year: "2026",
+        year: "Summer 2026",
         category: "AI & Research",
         accent: "indigo",
-        status: "UNDERGRADUATE RESEARCH AWARD",
+        status: "SUMMER RESEARCH ASSISTANTSHIP",
         team: "Supervised by Dr. Daniel Rea",
         summary:
             "An HCI research project investigating whether reusable movements and predefined move-sets can make robot teleoperation more expressive and practical.",
@@ -124,7 +125,7 @@ export const projects: Project[] = [
         category: "Robotics",
         accent: "peacock",
         status: "HARDWARE + SOFTWARE",
-        team: "Independent and research work",
+        team: "Independent robotics work",
         summary:
             "A cross-platform robotics environment for configuring, calibrating, teleoperating, and troubleshooting real robotic arms.",
         built: "ROS 2 and Docker environments across Ubuntu and Windows for Kinova Gen3 Lite and SO-ARM101 hardware, including LeRobot tooling, cameras, USB devices, and motor configuration.",
@@ -349,9 +350,9 @@ export const projects: Project[] = [
         stack: ["Python", "discord.py", "Railway", "APIs"],
     },
     {
-        slug: "aangan-os",
-        title: "Aangan OS",
-        shortTitle: "Aangan OS",
+        slug: "av-dos",
+        title: "AV-DOS",
+        shortTitle: "AV-DOS",
         year: "2026",
         category: "Creative",
         accent: "gulal",
@@ -418,11 +419,11 @@ export const journey: JourneyMilestone[] = [
     },
     {
         year: "2026",
-        label: "RESEARCH",
-        title: "From building systems to studying interaction",
-        copy: "An Undergraduate Research Award project with Dr. Daniel Rea brought robotics and human-computer interaction together. The work now includes research questions, ethics, user-study design, workshop activities, and qualitative analysis.",
-        note: "Current direction: build the technology, then understand the person using it.",
-        signals: ["HCI", "Teleoperation", "User Studies", "Research Design"],
+        label: "ROBOTICS IN PRACTICE",
+        title: "Software met the physical world",
+        copy: "Hands-on work with ROS 2, Docker, Linux, Kinova, and LeRobot moved debugging beyond the screen. Devices, calibration, permissions, drivers, and real hardware made every layer visible.",
+        note: "Shift: from debugging software in isolation to tracing failures across hardware and software.",
+        signals: ["ROS 2", "Docker", "Linux", "Robot Hardware"],
     },
 ];
 
@@ -481,7 +482,7 @@ export const skillDomains = [
     {
         title: "Data & Intelligence",
         evidence:
-            "Relational and graph data, symbolic reasoning, and neural-network research",
+            "Relational and graph data, symbolic reasoning, and neural-network interpretability",
         skills: [
             "SQLite",
             "SQL Server",
@@ -493,17 +494,17 @@ export const skillDomains = [
         ],
     },
     {
-        title: "Robotics & Research",
+        title: "Robotics & Hardware",
         evidence:
-            "Real robot setup, teleoperation, HCI study design, and qualitative inquiry",
+            "Real robot setup, teleoperation, calibration, and cross-platform hardware/software debugging",
         skills: [
             "ROS 2",
             "Docker",
             "Ubuntu",
             "Kinova",
             "LeRobot",
-            "User Studies",
-            "Research Ethics",
+            "Device Integration",
+            "Hardware Debugging",
         ],
     },
 ];
@@ -517,11 +518,11 @@ export const experience = [
             "Teach certified abacus and mental-math training to students aged 5-13, translating complex processes into steps that different learners can internalize.",
     },
     {
-        period: "2026",
-        role: "Undergraduate Research Assistant",
+        period: "Summer 2026",
+        role: "Summer Research Assistant",
         place: "University of Manitoba",
         summary:
-            "Investigate reusable motion macros for robot teleoperation under the supervision of Dr. Daniel Rea.",
+            "Investigated reusable motion macros for robot teleoperation under the supervision of Dr. Daniel Rea.",
     },
 ];
 

@@ -226,7 +226,7 @@ footer > button { justify-self: end; border: 2px solid var(--ink); background: v
 .autocomplete { display: flex; gap: .4rem; padding: 0 1rem .7rem; overflow-x: auto; }
 .terminal-help { margin: 0; padding: .6rem 1rem; border-top: 1px solid #3e352d; color: #746758; font: .56rem ui-monospace, monospace; text-align: center; }
 
-/* Content architecture additions: these extend the original Aangan OS design. */
+/* Content architecture additions: these extend the original AV-DOS design. */
 .mobile-menu { display: none; position: relative; }
 .mobile-menu summary { min-height: 42px; display: grid; place-items: center; border: 2px solid var(--ink); border-radius: 7px; padding: 0 .7rem; background: var(--canvas); font: 850 .62rem ui-monospace, monospace; list-style: none; }
 .mobile-menu summary::-webkit-details-marker { display: none; }

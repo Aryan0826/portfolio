@@ -29,13 +29,13 @@ type TerminalWorkspaceProps = {
 const welcomeEntry: TerminalEntry = {
   id: 0,
   lines: [
-    'AANGAN OS 2.0 - projects, systems, robotics, and the path between them',
+    'AV-DOS 2.0 - projects, systems, robotics, and the path between them',
     'Type "help" for commands, or choose a suggestion below.',
   ],
   kind: 'success',
 };
 
-const quickCommands = ['projects', 'research', 'journey', 'resume', 'contact', 'help'];
+const quickCommands = ['projects', 'skills', 'journey', 'resume', 'contact', 'help'];
 
 export function TerminalWorkspace({
   autoFocus = false,
@@ -138,7 +138,7 @@ export function TerminalWorkspace({
       <div className="cli-ornament" aria-hidden="true"><span /><span /><span /><span /></div>
       <section className="cli-window">
         <div className="window-titlebar cli-titlebar">
-          <span>AANGAN://TERMINAL</span>
+          <span>AV-DOS://TERMINAL</span>
           <button onClick={onReturnToGui}>ESC / RETURN TO GUI</button>
         </div>
         <div className="woven-rule" />
@@ -216,4 +216,3 @@ export function TerminalWorkspace({
     </main>
   );
 }
-

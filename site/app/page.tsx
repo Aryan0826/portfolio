@@ -19,7 +19,9 @@ export default function Home() {
   const [mode, setMode] = useState<InterfaceMode>('gui');
   const [theme, setTheme] = useState<Theme>(() => {
     if (typeof window === 'undefined') return 'paper';
-    return window.localStorage.getItem('aangan-theme') === 'night' ? 'night' : 'paper';
+    const savedTheme = window.localStorage.getItem('av-dos-theme')
+      ?? window.localStorage.getItem('aangan-theme');
+    return savedTheme === 'night' ? 'night' : 'paper';
   });
   const [time, setTime] = useState('');
   const [terminalCommand, setTerminalCommand] = useState<string>();
@@ -38,7 +40,7 @@ export default function Home() {
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
-    window.localStorage.setItem('aangan-theme', theme);
+    window.localStorage.setItem('av-dos-theme', theme);
   }, [theme]);
 
   function openTerminal(command?: string, shouldFocus = false) {
