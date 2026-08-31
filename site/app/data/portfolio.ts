@@ -1,6 +1,8 @@
 // This file is the portfolio's content source of truth.
 // Add, remove, or reorder projects here; the GUI, filters, and CLI update automatically.
 
+const publicBasePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
+
 export const projectCategories = [
   'All',
   'Software',
@@ -40,7 +42,7 @@ export const profile = {
   location: 'Winnipeg, Canada',
   email: 'vekariyaaryan100@gmail.com',
   github: 'https://github.com/Aryan0826',
-  resumeUrl: '/AryanVekariya-Resume.pdf',
+  resumeUrl: `${publicBasePath}/AryanVekariya-Resume.pdf`,
   headline: 'Computer Science student, builder, and emerging HCI researcher.',
   intro:
     'I learn by building: entering unfamiliar territory, finding the fundamentals, and carrying each hard-won lesson into the next system.',
