@@ -22,6 +22,7 @@ export type Project = {
     slug: string;
     title: string;
     shortTitle: string;
+    buildOrder: number;
     year: string;
     category: ProjectCategory;
     accent: Accent;
@@ -58,11 +59,12 @@ export const profile = {
     },
 };
 
-export const projects: Project[] = [
+const projectCatalog: Project[] = [
     {
         slug: "cyber-sentinel",
         title: "CyberSentinel",
         shortTitle: "CyberSentinel",
+        buildOrder: 6,
         year: "2025",
         category: "Software",
         accent: "vermilion",
@@ -93,6 +95,7 @@ export const projects: Project[] = [
         slug: "teleoperation-macros-research",
         title: "Reusable Motion Macros for Robot Teleoperation",
         shortTitle: "Teleoperation Research",
+        buildOrder: 2,
         year: "Summer 2026",
         category: "AI & Research",
         accent: "indigo",
@@ -121,6 +124,7 @@ export const projects: Project[] = [
         slug: "robot-learning-stack",
         title: "Robot Learning & Teleoperation Stack",
         shortTitle: "Robot Learning Stack",
+        buildOrder: 3,
         year: "2025-26",
         category: "Robotics",
         accent: "peacock",
@@ -152,6 +156,7 @@ export const projects: Project[] = [
         slug: "studyflow",
         title: "StudyFlow",
         shortTitle: "StudyFlow",
+        buildOrder: 11,
         year: "University Project",
         category: "Software",
         accent: "marigold",
@@ -181,6 +186,7 @@ export const projects: Project[] = [
         slug: "distributed-consensus",
         title: "Distributed Consensus Network",
         shortTitle: "Consensus Network",
+        buildOrder: 4,
         year: "Systems Coursework",
         category: "Systems",
         accent: "gulal",
@@ -203,6 +209,7 @@ export const projects: Project[] = [
         slug: "fat32-reader",
         title: "FAT32 Filesystem Reader",
         shortTitle: "FAT32 Reader",
+        buildOrder: 5,
         year: "Systems Coursework",
         category: "Systems",
         accent: "indigo",
@@ -225,6 +232,7 @@ export const projects: Project[] = [
         slug: "cooked",
         title: "Cooked",
         shortTitle: "Cooked",
+        buildOrder: 12,
         year: "2024",
         category: "Creative",
         accent: "vermilion",
@@ -248,6 +256,7 @@ export const projects: Project[] = [
         slug: "hack-a-judge",
         title: "HackAJudge",
         shortTitle: "HackAJudge",
+        buildOrder: 10,
         year: "2025",
         category: "Software",
         accent: "marigold",
@@ -277,6 +286,7 @@ export const projects: Project[] = [
         slug: "how-neural-networks-see",
         title: "How Neural Networks See",
         shortTitle: "How Neural Networks See",
+        buildOrder: 8,
         year: "AI Coursework",
         category: "AI & Research",
         accent: "peacock",
@@ -304,6 +314,7 @@ export const projects: Project[] = [
         slug: "badminton-expert-system",
         title: "Badminton Shot Expert System",
         shortTitle: "Badminton Expert System",
+        buildOrder: 9,
         year: "AI Coursework",
         category: "AI & Research",
         accent: "marigold",
@@ -331,6 +342,7 @@ export const projects: Project[] = [
         slug: "discord-verification-bot",
         title: "BookClub Verification Bot",
         shortTitle: "Verification Bot",
+        buildOrder: 7,
         year: "2025",
         category: "Software",
         accent: "indigo",
@@ -353,6 +365,7 @@ export const projects: Project[] = [
         slug: "av-dos",
         title: "AV-DOS",
         shortTitle: "AV-DOS",
+        buildOrder: 1,
         year: "2026",
         category: "Creative",
         accent: "gulal",
@@ -374,13 +387,17 @@ export const projects: Project[] = [
     },
 ];
 
+// Build log order is intentionally newest-to-oldest so the numbering tells the
+// growth story consistently in the GUI, filters, and terminal.
+export const projects: Project[] = [...projectCatalog].sort(
+    (first, second) => first.buildOrder - second.buildOrder,
+);
+
 export const featuredProject =
     projects.find((project) => project.featured) ?? projects[0];
 
 export function getProjectNumber(project: Project) {
-    return String(
-        projects.findIndex((item) => item.slug === project.slug) + 1,
-    ).padStart(2, "0");
+    return String(project.buildOrder).padStart(2, "0");
 }
 
 export type JourneyMilestone = {

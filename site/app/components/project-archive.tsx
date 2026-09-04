@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useState } from 'react';
 import {
   Project,
   ProjectCategory,
@@ -60,7 +60,7 @@ function ProjectCard({
 }
 
 export function ProjectArchive({ onOpenTerminal }: ProjectArchiveProps) {
-  const archiveProjects = useMemo(() => projects.filter((project) => !project.featured), []);
+  const archiveProjects = projects;
   const [activeCategory, setActiveCategory] = useState<(typeof projectCategories)[number]>('All');
   const [showAll, setShowAll] = useState(false);
 
@@ -75,7 +75,7 @@ export function ProjectArchive({ onOpenTerminal }: ProjectArchiveProps) {
     <div className="project-archive">
       <div className="archive-heading">
         <div>
-          <p>PROJECT INDEX / {projects.length} BUILDS</p>
+          <p>PROJECT INDEX / {projects.length} BUILDS / NEWEST TO EARLIEST</p>
           <h3>The trail, not just the trophies.</h3>
         </div>
         <p>Filter by the kind of problem. Open only the build notes you want. Every card comes from the same typed data file that powers the terminal.</p>
