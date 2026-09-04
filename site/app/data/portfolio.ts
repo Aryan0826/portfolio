@@ -48,7 +48,8 @@ export const profile = {
     github: "https://github.com/Aryan0826",
     linkedin: "https://www.linkedin.com/in/aryan-vekariya-b66663262/",
     resumeUrl: `${publicBasePath}/AryanVekariya-Resume.pdf`,
-    headline: "Computer Science student building across software, systems, and robotics.",
+    headline:
+        "Computer Science student building across software, systems, and robotics.",
     intro: "I learn by building: entering unfamiliar territory, finding the fundamentals, and carrying each hard-won lesson into the next system.",
     education: {
         institution: "University of Manitoba",
@@ -187,23 +188,26 @@ const projectCatalog: Project[] = [
         title: "Distributed Consensus Network",
         shortTitle: "Consensus Network",
         buildOrder: 4,
-        year: "Systems Coursework",
+        year: "Distributed Computing Coursework",
         category: "Systems",
         accent: "gulal",
-        status: "FAILURE-AWARE SYSTEM",
+        status: "BYZANTINE CONSENSUS",
         team: "University systems project",
+
         summary:
-            "A multi-node system that uses UDP gossip and TCP interfaces to coordinate while treating communication failure as normal.",
-        built: "Node communication with UDP gossip, TCP client interfaces, heartbeats, timeouts, failure handling, and Byzantine-style consensus concepts.",
-        reason: "To explore what coordination means when no machine can assume it holds the only source of truth.",
-        startedWith: "Sockets, processes, and core networking concepts",
+            "A multi-node peer-to-peer network built in Python to explore how independent computers agree on shared data even when some nodes are unresponsive or intentionally lying.",
+        built: "A peer-to-peer system featuring a UDP gossip protocol for node discovery, TCP sockets for client commands, a 67% quorum rule, smart timeouts, and a simulator for 'bad' nodes that intentionally broadcast fake data.",
+        reason: "To understand the chaotic nature of distributed networks and learn how independent computers can securely reach an agreement without relying on a central server.",
+        startedWith:
+            "Basic Python syntax and zero prior experience with sockets, networking, or TCP/UDP communication.",
         learned:
-            "Distributed state, gossip, failure detection, timeouts, and consensus reasoning",
+            "Socket programming, managing concurrent TCP/UDP traffic, the Oral Messages algorithm, failure handling, and how modern distributed systems operate.",
         challenge:
-            "Keeping node state coherent when messages can be delayed, peers can disappear, and agreement cannot rely on a central authority.",
+            "Coordinating information across multiple independent nodes while juggling concurrent network traffic, handling unresponsive peers, and building a system that doesn't freeze when nodes disappear.",
         outcome:
-            "Made networking failures tangible and exposed the gap between a locally correct program and a resilient distributed system.",
-        stack: ["C", "TCP", "UDP", "Sockets", "select()", "Message Queues"],
+            "Developed a resilient distributed network that dynamically scales its fault tolerance, gracefully handles timeouts, filters out malicious lies, and safely commits truth to a shared database.",
+
+        stack: ["Python", "TCP", "UDP", "Sockets", "select()", "JSON"],
     },
     {
         slug: "fat32-reader",
