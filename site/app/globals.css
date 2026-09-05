@@ -1541,6 +1541,28 @@ footer > button {
         800 0.67rem ui-monospace,
         monospace;
 }
+.project-sort-switch {
+    flex: 0 0 auto;
+    margin-left: auto;
+}
+
+.project-filterbar .project-sort-switch button {
+    min-width: 72px;
+    min-height: 32px;
+    padding: 0 0.65rem;
+    border: 0;
+    border-radius: 4px;
+    background: transparent;
+    color: var(--ink);
+    font:
+        850 0.65rem ui-monospace,
+        monospace;
+}
+
+.project-filterbar .project-sort-switch button.active {
+    background: var(--ink);
+    color: var(--paper);
+}
 .project-filterbar button small {
     display: grid;
     place-items: center;

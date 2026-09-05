@@ -391,7 +391,7 @@ const projectCatalog: Project[] = [
 // Build log order is intentionally newest-to-oldest so the numbering tells the
 // growth story consistently in the GUI, filters, and terminal.
 export const projects: Project[] = [...projectCatalog].sort(
-    (first, second) => first.buildOrder - second.buildOrder,
+    (first, second) => second.buildOrder - first.buildOrder,
 );
 
 export const featuredProject =
