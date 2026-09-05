@@ -37,6 +37,11 @@ export type Project = {
     outcome: string;
     stack: string[];
     featured?: boolean;
+    images?: {
+        src: string;
+        alt: string;
+        caption?: string;
+    }[];
 };
 
 export const profile = {
@@ -48,7 +53,8 @@ export const profile = {
     github: "https://github.com/Aryan0826",
     linkedin: "https://www.linkedin.com/in/aryan-vekariya-b66663262/",
     resumeUrl: `${publicBasePath}/AryanVekariya-Resume.pdf`,
-    headline: "Computer Science student building across software, systems, and robotics.",
+    headline:
+        "Computer Science student building across software, systems, and robotics.",
     intro: "I learn by building: entering unfamiliar territory, finding the fundamentals, and carrying each hard-won lesson into the next system.",
     education: {
         institution: "University of Manitoba",
@@ -64,7 +70,7 @@ const projectCatalog: Project[] = [
         slug: "cyber-sentinel",
         title: "CyberSentinel",
         shortTitle: "CyberSentinel",
-        buildOrder: 6,
+        buildOrder: 5,
         year: "2025",
         category: "Software",
         accent: "vermilion",
@@ -89,74 +95,66 @@ const projectCatalog: Project[] = [
             "JavaScript",
             "VirusTotal API",
         ],
-        featured: true,
     },
     {
-        slug: "teleoperation-macros-research",
-        title: "Reusable Motion Macros for Robot Teleoperation",
-        shortTitle: "Teleoperation Research",
-        buildOrder: 2,
+        slug: "robot-teleoperation-research",
+        title: "Move-Sets for Robot Teleoperation",
+        shortTitle: "Robot Move-sets Research",
+        buildOrder: 9,
         year: "Summer 2026",
-        category: "AI & Research",
+        category: "Robotics",
         accent: "indigo",
         status: "SUMMER RESEARCH ASSISTANTSHIP",
         team: "Supervised by Dr. Daniel Rea",
+
         summary:
-            "An HCI research project investigating whether reusable movements and predefined move-sets can make robot teleoperation more expressive and practical.",
-        built: "A research plan spanning robotic-system configuration, ethics materials, participant recruitment, experiment and workshop design, and qualitative data collection.",
-        reason: "Continuous manual control is not always the most natural way for people to direct a robot.",
-        startedWith: "Hands-on robotics setup and software prototyping",
-        learned:
-            "Research questions, ethics, user studies, qualitative methods, and experimental design",
-        challenge:
-            "Connecting a technically reliable robot-control system to a study that can reveal how people actually want to interact with it.",
-        outcome:
-            "Connected prior work in robotics, interfaces, software engineering, and human behaviour into one academic research direction.",
-        stack: [
-            "HCI",
-            "Robotics",
-            "User Studies",
-            "Research Design",
-            "Qualitative Analysis",
-        ],
-    },
-    {
-        slug: "robot-learning-stack",
-        title: "Robot Learning & Teleoperation Stack",
-        shortTitle: "Robot Learning Stack",
-        buildOrder: 3,
-        year: "2025-26",
-        category: "Robotics",
-        accent: "peacock",
-        status: "HARDWARE + SOFTWARE",
-        team: "Independent robotics work",
-        summary:
-            "A cross-platform robotics environment for configuring, calibrating, teleoperating, and troubleshooting real robotic arms.",
-        built: "ROS 2 and Docker environments across Ubuntu and Windows for Kinova Gen3 Lite and SO-ARM101 hardware, including LeRobot tooling, cameras, USB devices, and motor configuration.",
-        reason: "Robotics offered a way to test software decisions against the unpredictability of the physical world.",
+            "An HCI research project and hardware setup  investigating whether reusable and predefined move-sets can make robot teleoperation more expressive and practical.",
+        built: "I configured physical SO-ARM101 leader-follower robot arms and explored ROS 2 and Docker environments for a Kinova Gen3 Lite. I also designed a three-hour participatory workshop featuring physical tasks and storyboards to gather user ideas.",
+        reason: "Controlling a robot arm manually is incredibly complicated and exhausting, especially when trying to judge depth through a camera feed. I wanted to explore if packaging common actions into simple, reusable commands could reduce the operator's burden while keeping them in control.",
         startedWith:
-            "Software development without deep hardware integration experience",
+            "General software development experience, but zero hands-on experience with hardware integration, formal HCI research, or user study design.",
         learned:
-            "ROS 2, Linux device layers, robot calibration, teleoperation, drivers, and hardware debugging",
+            "ROS 2, hardware debugging, user study design, qualitative methods, and how to create a participatory workshop where users act as design partners.",
         challenge:
-            "Diagnosing failures across operating systems, containers, Python environments, device permissions, motors, sensors, and real hardware.",
+            "Diagnosing hardware and software failures across operating systems and real motors, while simultaneously designing a study that prevents my own engineering ideas from biasing the participants' creativity.",
         outcome:
-            "Developed a layered debugging approach for systems where software, operating systems, and hardware fail in different ways.",
+            "I successfully configured the physical robot prototypes, submitted a Research Ethics Board application, and developed a complete, pilot-ready workshop where users can test real robots and co-design their own control macros.",
+
         stack: [
             "ROS 2",
-            "Docker",
-            "Ubuntu",
             "Python",
+            "Docker",
+            "C",
+            "C++",
+            "Design Worskshops",
+            "Ubuntu",
             "Kinova Gen3 Lite",
             "LeRobot",
-            "SO-ARM101",
         ],
+        images: [
+            {
+                src: `${publicBasePath}/project-images/robot-research-01.jpg`,
+                alt: "Robot teleoperation research",
+                caption: "Robot teleoperation research",
+            },
+            {
+                src: `${publicBasePath}/project-images/robot-research-02.jpg`,
+                alt: "Robot teleoperation research",
+                caption: "Robot teleoperation research",
+            },
+            {
+                src: `${publicBasePath}/project-images/robot-research-03.jpg`,
+                alt: "Robot teleoperation research",
+                caption: "Robot teleoperation research",
+            },
+        ],
+        featured: true,
     },
     {
         slug: "studyflow",
         title: "StudyFlow",
         shortTitle: "StudyFlow",
-        buildOrder: 11,
+        buildOrder: 8,
         year: "University Project",
         category: "Software",
         accent: "marigold",
@@ -186,30 +184,33 @@ const projectCatalog: Project[] = [
         slug: "distributed-consensus",
         title: "Distributed Consensus Network",
         shortTitle: "Consensus Network",
-        buildOrder: 4,
-        year: "Systems Coursework",
+        buildOrder: 7,
+        year: "Distributed Computing Coursework",
         category: "Systems",
         accent: "gulal",
-        status: "FAILURE-AWARE SYSTEM",
+        status: "BYZANTINE CONSENSUS",
         team: "University systems project",
+
         summary:
-            "A multi-node system that uses UDP gossip and TCP interfaces to coordinate while treating communication failure as normal.",
-        built: "Node communication with UDP gossip, TCP client interfaces, heartbeats, timeouts, failure handling, and Byzantine-style consensus concepts.",
-        reason: "To explore what coordination means when no machine can assume it holds the only source of truth.",
-        startedWith: "Sockets, processes, and core networking concepts",
+            "A multi-node peer-to-peer network built in Python to explore how independent computers agree on shared data even when some nodes are unresponsive or intentionally lying.",
+        built: "A peer-to-peer system featuring a UDP gossip protocol for node discovery, TCP sockets for client commands, a 67% quorum rule, smart timeouts, and a simulator for 'bad' nodes that intentionally broadcast fake data.",
+        reason: "To understand the chaotic nature of distributed networks and learn how independent computers can securely reach an agreement without relying on a central server.",
+        startedWith:
+            "Basic Python syntax and zero prior experience with sockets, networking, or TCP/UDP communication.",
         learned:
-            "Distributed state, gossip, failure detection, timeouts, and consensus reasoning",
+            "Socket programming, managing concurrent TCP/UDP traffic, the Oral Messages algorithm, failure handling, and how modern distributed systems operate.",
         challenge:
-            "Keeping node state coherent when messages can be delayed, peers can disappear, and agreement cannot rely on a central authority.",
+            "Coordinating information across multiple independent nodes while juggling concurrent network traffic, handling unresponsive peers, and building a system that doesn't freeze when nodes disappear.",
         outcome:
-            "Made networking failures tangible and exposed the gap between a locally correct program and a resilient distributed system.",
-        stack: ["C", "TCP", "UDP", "Sockets", "select()", "Message Queues"],
+            "Developed a resilient distributed network that dynamically scales its fault tolerance, gracefully handles timeouts, filters out malicious lies, and safely commits truth to a shared database.",
+
+        stack: ["Python", "TCP", "UDP", "Sockets", "select()", "JSON"],
     },
     {
         slug: "fat32-reader",
         title: "FAT32 Filesystem Reader",
         shortTitle: "FAT32 Reader",
-        buildOrder: 5,
+        buildOrder: 6,
         year: "Systems Coursework",
         category: "Systems",
         accent: "indigo",
@@ -232,7 +233,7 @@ const projectCatalog: Project[] = [
         slug: "cooked",
         title: "Cooked",
         shortTitle: "Cooked",
-        buildOrder: 12,
+        buildOrder: 0,
         year: "2024",
         category: "Creative",
         accent: "vermilion",
@@ -256,7 +257,7 @@ const projectCatalog: Project[] = [
         slug: "hack-a-judge",
         title: "HackAJudge",
         shortTitle: "HackAJudge",
-        buildOrder: 10,
+        buildOrder: 1,
         year: "2025",
         category: "Software",
         accent: "marigold",
@@ -286,7 +287,7 @@ const projectCatalog: Project[] = [
         slug: "how-neural-networks-see",
         title: "How Neural Networks See",
         shortTitle: "How Neural Networks See",
-        buildOrder: 8,
+        buildOrder: 4,
         year: "AI Coursework",
         category: "AI & Research",
         accent: "peacock",
@@ -314,7 +315,7 @@ const projectCatalog: Project[] = [
         slug: "badminton-expert-system",
         title: "Badminton Shot Expert System",
         shortTitle: "Badminton Expert System",
-        buildOrder: 9,
+        buildOrder: 3,
         year: "AI Coursework",
         category: "AI & Research",
         accent: "marigold",
@@ -342,7 +343,7 @@ const projectCatalog: Project[] = [
         slug: "discord-verification-bot",
         title: "BookClub Verification Bot",
         shortTitle: "Verification Bot",
-        buildOrder: 7,
+        buildOrder: 2,
         year: "2025",
         category: "Software",
         accent: "indigo",
@@ -365,7 +366,7 @@ const projectCatalog: Project[] = [
         slug: "av-dos",
         title: "AV-DOS",
         shortTitle: "AV-DOS",
-        buildOrder: 1,
+        buildOrder: 10,
         year: "2026",
         category: "Creative",
         accent: "gulal",
