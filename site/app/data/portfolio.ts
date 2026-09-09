@@ -530,7 +530,7 @@ export const skillDomains = [
 
 export const experience = [
     {
-        period: "2025 - Present",
+        period: "May 2025 - April 2026",
         role: "Course Instructor",
         place: "UCMAS Winnipeg",
         summary:
