@@ -61,7 +61,7 @@ export const profile = {
         degree: "B.Sc. Computer Science (Honours)",
         minor: "Minor in Mathematics",
         period: "2023 - Present",
-        gpa: "4.33 / 4.5",
+        gpa: "4.11 / 4.5",
     },
 };
 
@@ -530,7 +530,7 @@ export const skillDomains = [
 
 export const experience = [
     {
-        period: "2025 - Present",
+        period: "May 2025 - April 2026",
         role: "Course Instructor",
         place: "UCMAS Winnipeg",
         summary:
