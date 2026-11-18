@@ -7,8 +7,8 @@ const siteUrl =
 const publicBasePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 const siteOrigin = new URL(siteUrl).origin;
 const portfolioUrl = new URL(`${publicBasePath}/`, siteOrigin);
-const ogImageUrl = new URL(`${publicBasePath}/portfolio-preview.png`, siteOrigin);
-const iconPath = `${publicBasePath}/portfolio-icon.png`;
+const ogImageUrl = new URL(`${publicBasePath}/portfolio-preview-white.png`, siteOrigin);
+const iconPath = `${publicBasePath}/portfolio-icon-white.png`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     url: portfolioUrl,
     title: 'Aryan Vekariya — AV-DOS',
     description: 'Code, curiosity, and character. Follow Aryan Vekariya’s journey across software, systems, and robotics.',
-    images: [{ url: ogImageUrl, width: 1200, height: 627, alt: 'Pixel-art computer setup with a monitor displaying HELLO WORLD' }],
+    images: [{ url: ogImageUrl, width: 1200, height: 627, alt: 'White pixel-art computer setup with a dark monitor displaying HELLO WORLD' }],
   },
   twitter: {
     card: 'summary_large_image',
