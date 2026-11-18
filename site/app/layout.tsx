@@ -5,7 +5,10 @@ const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ??
   'https://aryan-aangan-os.aryanveks.chatgpt.site';
 const publicBasePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
-const ogImageUrl = new URL(`${publicBasePath}/og.png`, new URL(siteUrl).origin);
+const siteOrigin = new URL(siteUrl).origin;
+const portfolioUrl = new URL(`${publicBasePath}/`, siteOrigin);
+const ogImageUrl = new URL(`${publicBasePath}/portfolio-preview.png`, siteOrigin);
+const iconPath = `${publicBasePath}/portfolio-icon.png`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -13,11 +16,15 @@ export const metadata: Metadata = {
   description: 'The personal operating system of Aryan Vekariya, a Computer Science student building across software, systems, and robotics.',
   applicationName: 'AV-DOS',
   authors: [{ name: 'Aryan Vekariya' }],
+  icons: {
+    icon: [{ url: iconPath, type: 'image/png', sizes: '96x96' }],
+  },
   openGraph: {
     type: 'website',
+    url: portfolioUrl,
     title: 'Aryan Vekariya — AV-DOS',
     description: 'Code, curiosity, and character. Follow Aryan Vekariya’s journey across software, systems, and robotics.',
-    images: [{ url: ogImageUrl, width: 1200, height: 630, alt: 'Aryan Vekariya — Code, Curiosity, Character' }],
+    images: [{ url: ogImageUrl, width: 1200, height: 627, alt: 'Pixel-art computer setup with a monitor displaying HELLO WORLD' }],
   },
   twitter: {
     card: 'summary_large_image',
